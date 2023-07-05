@@ -30,7 +30,7 @@ const Button: FC<Props> = ({
       onClick={onClick}
       className={`flexCenter gap-3 px-4 py-3 ${textColor ?? 'text-white'} ${
         submitting ? 'bg-black/50' : bgColor ?? 'bg-primary-purple'
-      } rounded-xl text-sm font-medium max-md:w-full`}
+      } rounded-xl text-sm font-medium dark:bg-blue-500 max-md:w-full`}
     >
       {leftIcon ? <Image src={leftIcon} width={14} height={14} alt="left icon" /> : null}
 
