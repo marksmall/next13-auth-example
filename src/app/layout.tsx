@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
+import AuthProvider from '~/app/context/AuthProvider';
 import Navbar from '~/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -20,9 +21,11 @@ const RootLayout: FC<Props> = ({ children }) => {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
+        <AuthProvider>
+          <Navbar />
 
-        <main className="flex min-h-screen items-start justify-center p-6">{children}</main>
+          <main className="flex min-h-screen items-start justify-center p-6">{children}</main>
+        </AuthProvider>
       </body>
     </html>
   );
