@@ -17,6 +17,11 @@ const ClientPage: FC<Props> = ({}) => {
     },
   });
 
+  console.log('CLIENT SESSION: ', session);
+  if (!session?.user) {
+    return null;
+  }
+
   return (
     <section className="flex flex-col gap-6">
       <UserCard user={session?.user} type="client" />

@@ -1,14 +1,7 @@
 import { FC } from 'react';
 
 import Image from 'next/image';
-
-type User =
-  | {
-      name?: string | null;
-      email?: string | null;
-      image?: string | null;
-    }
-  | undefined;
+import { User } from 'next-auth';
 
 type Props = {
   user: User;
@@ -38,8 +31,8 @@ const UserCard: FC<Props> = ({ user, type }) => {
           />
         </>
       ) : null}
-
-      <p className="text-center text-2xl">{type} Page!</p>
+      <p className="text-center text-2xl">{type} Page!</p>{' '}
+      <p className="text-center text-2xl">Role: {user.role}!</p>
     </section>
   );
 };
