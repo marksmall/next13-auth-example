@@ -3,6 +3,8 @@ import { FC, ReactNode } from 'react';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
+import Navbar from '~/components/Navbar';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -17,7 +19,11 @@ type Props = {
 const RootLayout: FC<Props> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+
+        <main className="flex min-h-screen items-start justify-center p-6">{children}</main>
+      </body>
     </html>
   );
 };
